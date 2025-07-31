@@ -1,17 +1,17 @@
-#include "Engine.hpp"
+#include "MyGame.hpp"
 
-class MyGame : public Engine::Game {
-public:
-    void Init() override { /* ... */ }
-    void Update() override { /* ... */ }
-    void Render() override { /* ... */ }
-    void HandleInput(const Uint8* keys) override { /* ... */ }
-};
+void MyGame::Init() {
+    // Your init code
+}
 
-int main() {
-    Engine::Engine engine;
-    auto game = std::make_unique<MyGame>();
-    engine.SetGame(std::move(game));
-    engine.Start();
-    return 0;
+void MyGame::Update() {
+    // Your update logic
+}
+
+void MyGame::Render() {
+    // Your render code
+}
+
+void MyGame::HandleInput(const Uint8* keys) {
+    // Your input handling
 }
