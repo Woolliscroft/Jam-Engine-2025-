@@ -5,15 +5,16 @@
 #include "Engine.hpp"
 #include "MyGame.hpp"
 
-// Personal Directory:
-/* 
-	cd “C:\Users\arunw\OneDrive - St Albans School\Documents\GMTK Jam 2025” 
-*/
+MyGame* gMyGame = nullptr; // global pointer
 
 int main() {
     Engine::Engine engine;
+
     auto game = std::make_unique<MyGame>();
+    gMyGame = game.get(); // global pointer to Game 
+
     engine.SetGame(std::move(game));
     engine.Start();
+
     return 0;
 }

@@ -1,17 +1,27 @@
 #include "MyGame.hpp"
+#include "MyGame.hpp"
+#include "TitleScreen.hpp"
+#include "GameScreen.hpp"
+
+
+void MyGame::SetScreen(const std::string& name) {
+    screenManager.SetScreen(name);
+}
 
 void MyGame::Init() {
-    // Your init code
+    RegisterScreen<TitleScreen>("TitleScreen");
+    RegisterScreen<GameScreen>("GameScreen");
+    SetScreen("TitleScreen");
 }
 
 void MyGame::Update() {
-    // Your update logic
+    screenManager.Update();
 }
 
 void MyGame::Render() {
-    // Your render code
+    screenManager.Render();
 }
 
 void MyGame::HandleInput(const Uint8* keys) {
-    // Your input handling
+    screenManager.HandleInput(keys);
 }
