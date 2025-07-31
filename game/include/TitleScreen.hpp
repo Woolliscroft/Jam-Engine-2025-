@@ -1,4 +1,6 @@
 #pragma once
+
+#include "TextureLoader.hpp"
 #include "Screen.hpp"
 class MyGame;      // forward declaration
 class GameScreen;  // forward

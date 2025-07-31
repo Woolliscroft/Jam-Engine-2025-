@@ -1,6 +1,9 @@
 #pragma once
+#include <SDL.h>
+
 #include "Engine.hpp"
 #include "ScreenManager.hpp"
+#include "TextureLoader.hpp"
 
 class MyGame : public Engine::Game {
 public:

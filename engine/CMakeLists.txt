@@ -1,6 +1,8 @@
 add_library(engine
     src/Engine.cpp
     src/Window.cpp
+    src/TextureLoader.cpp
+    src/ResourceManager.cpp
     # Add Engine Source Files here
 )
 

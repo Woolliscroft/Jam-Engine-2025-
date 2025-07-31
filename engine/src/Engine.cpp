@@ -2,6 +2,7 @@
 
 #include "Engine.hpp"
 #include "Window.hpp"
+#include "ResourceManager.hpp"
 
 namespace Engine {
 // Engine Constructor
@@ -11,7 +12,7 @@ Engine::Engine() {
 }
 // Engine Destructor (not correct term idk)
 Engine::~Engine() {
-    Stop();
+    // Stop() is called in Start() after loop, so no need here unless forcibly stopping
     SDL_Quit();
 }
 
@@ -23,11 +24,8 @@ void Engine::Start() {
     if (!game) return; 
 
     game->Init();
-    const Uint8* keys = nullptr; // Unsigned 8 bit Integer - 255 values for Input ; maybe make input its own thing?
-
     SDL_Event event;
     quit = false;
-
 
     while (!quit) {
         while (SDL_PollEvent(&event)) {
@@ -37,16 +35,20 @@ void Engine::Start() {
         }
 
         const Uint8* keys = SDL_GetKeyboardState(nullptr); 
-        game->HandleInput(keys); //to store ASCII values
+        game->HandleInput(keys);
+        game->Update();
 
-        game->Update(); // update game
-
-        SDL_RenderClear(Window::GetRenderer()); // clear previous renderer before rendering game again
+        SDL_RenderClear(Window::GetRenderer());
         game->Render();
-        SDL_RenderPresent(Window::GetRenderer()); //draw it again, once game gives more detail abt what to draw
+        SDL_RenderPresent(Window::GetRenderer());
         SDL_Delay(16);
     }
+
+    // Cleanup resources before quitting
+    ResourceManager::Clear();
+    Stop();  // Calls Window::OnCleanUp()
 }
+
 
 void Engine::Stop() {
     Window::OnCleanUp();
