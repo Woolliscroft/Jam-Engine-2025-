@@ -1,16 +1,15 @@
 #include "MyGame.hpp"
-#include "MyGame.hpp"
 #include "TitleScreen.hpp"
 #include "GameScreen.hpp"
-
 
 void MyGame::SetScreen(const std::string& name) {
     screenManager.SetScreen(name);
 }
 
 void MyGame::Init() {
-    RegisterScreen<TitleScreen>("TitleScreen");
-    RegisterScreen<GameScreen>("GameScreen");
+    // Make Screens, and then set to TitleScreen
+    screenManager.RegisterScreen("TitleScreen", new TitleScreen(this));
+    screenManager.RegisterScreen("GameScreen", new GameScreen(this));
     SetScreen("TitleScreen");
 }
 

@@ -4,12 +4,12 @@
 #include "Window.hpp"
 
 namespace Engine {
-
+// Engine Constructor
 Engine::Engine() {
     SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS);
     Window::Init();
 }
-
+// Engine Destructor (not correct term idk)
 Engine::~Engine() {
     Stop();
     SDL_Quit();
@@ -23,7 +23,7 @@ void Engine::Start() {
     if (!game) return; 
 
     game->Init();
-    const Uint8* keys = nullptr;
+    const Uint8* keys = nullptr; // Unsigned 8 bit Integer - 255 values for Input ; maybe make input its own thing?
 
     SDL_Event event;
     quit = false;
@@ -36,10 +36,10 @@ void Engine::Start() {
             }
         }
 
-        const Uint8* keys = SDL_GetKeyboardState(nullptr);
-        game->HandleInput(keys);
+        const Uint8* keys = SDL_GetKeyboardState(nullptr); 
+        game->HandleInput(keys); //to store ASCII values
 
-        game->Update();
+        game->Update(); // update game
 
         SDL_RenderClear(Window::GetRenderer()); // clear previous renderer before rendering game again
         game->Render();
@@ -52,4 +52,4 @@ void Engine::Stop() {
     Window::OnCleanUp();
 }
 
-} // namespace Engine
+} 

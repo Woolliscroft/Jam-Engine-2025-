@@ -11,11 +11,6 @@ public:
 
     void SetScreen(const std::string& name);
 
-    template<typename T>
-    void RegisterScreen(const std::string& name) {
-        screenManager.RegisterScreen<T>(name, this);
-    }
-
 private:
-    ScreenManager screenManager;
+    ScreenManager screenManager; //manage the screens, needs to be created here to work in MyGame.cpp
 };

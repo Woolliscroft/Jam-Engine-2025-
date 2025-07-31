@@ -2,27 +2,25 @@
 #include <memory>
 #include <unordered_map>
 #include <string>
-#include <functional>
 
 #include "Screen.hpp"
 
 class ScreenManager {
 public:
-    template<typename T, typename... Args>
-    void RegisterScreen(const std::string& name, Args&&... args) {
-        factories[name] = [=]() {
-            return std::make_unique<T>(args...);
-        };
+    // Make a Screen, using the Construcot
+    void RegisterScreen(const std::string& name, Screen* screen) {
+        screens[name] = std::unique_ptr<Screen>(screen);
     }
 
+    // Set the screen using its name
     void SetScreen(const std::string& name) {
-        if (factories.count(name)) {
-            currentScreen = factories[name]();
+        if (screens.count(name)) {
+            currentScreen = screens[name].get();
             currentScreen->Init();
         }
     }
 
-    void Update() {  
+    void Update() { // update current screen
         if (currentScreen) {
             currentScreen->Update();
         }
@@ -34,13 +32,13 @@ public:
         }
     }
 
-    void HandleInput(const Uint8* keys) {
+    void HandleInput(const Uint8* keys) { //checking input on the screen
         if (currentScreen) {
             currentScreen->HandleInput(keys);
         }
     }
 
 private:
-    std::unique_ptr<Screen> currentScreen;
-    std::unordered_map<std::string, std::function<std::unique_ptr<Screen>()>> factories;
+    std::unordered_map<std::string, std::unique_ptr<Screen>> screens;
+    Screen* currentScreen = nullptr;
 };
