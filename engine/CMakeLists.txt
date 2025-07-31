@@ -1,5 +1,6 @@
 add_library(engine
     src/Engine.cpp
+    src/Window.cpp
     # add other engine source files here
 )
 

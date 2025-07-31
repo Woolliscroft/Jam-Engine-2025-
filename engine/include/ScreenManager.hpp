@@ -18,7 +18,7 @@ public:
 
 	void Update(float deltaTime) {
 		if (currentScreen) {
-			currentScreen->UpdateScreen(deltaTime);
+			currentScreen->Update(deltaTime);
 		}
 	}
 
@@ -30,4 +30,4 @@ public:
 	}
 private:
 	std::unique_ptr<Screen> currentScreen;
-}
+};

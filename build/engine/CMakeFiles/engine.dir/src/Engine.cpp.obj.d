@@ -1,6 +1,7 @@
 engine/CMakeFiles/engine.dir/src/Engine.cpp.obj: \
  C:\Users\arunw\OneDrive\ -\ St\ Albans\ School\Documents\GMTK\ Jam\ 2025\engine\src\Engine.cpp \
  C:/Users/arunw/ONEDRI~1/DOCUME~1/GMTKJA~1/engine/include/Engine.hpp \
+ C:/Users/arunw/ONEDRI~1/DOCUME~1/GMTKJA~1/engine/include/Window.hpp \
  C:/Users/arunw/ONEDRI~1/DOCUME~1/GMTKJA~1/external/SDL2/include/SDL.h \
  C:/Users/arunw/ONEDRI~1/DOCUME~1/GMTKJA~1/external/SDL2/include/SDL_main.h \
  C:/Users/arunw/ONEDRI~1/DOCUME~1/GMTKJA~1/external/SDL2/include/SDL_stdinc.h \
@@ -299,4 +300,31 @@ engine/CMakeFiles/engine.dir/src/Engine.cpp.obj: \
  C:/MinGW/include/c++/13.2.0/bits/basic_ios.tcc \
  C:/MinGW/include/c++/13.2.0/bits/ostream.tcc \
  C:/MinGW/include/c++/13.2.0/istream \
- C:/MinGW/include/c++/13.2.0/bits/istream.tcc
+ C:/MinGW/include/c++/13.2.0/bits/istream.tcc \
+ C:/Users/arunw/ONEDRI~1/DOCUME~1/GMTKJA~1/engine/include/ScreenManager.hpp \
+ C:/Users/arunw/ONEDRI~1/DOCUME~1/GMTKJA~1/engine/include/Screen.hpp \
+ C:/MinGW/include/c++/13.2.0/memory \
+ C:/MinGW/include/c++/13.2.0/bits/stl_tempbuf.h \
+ C:/MinGW/include/c++/13.2.0/bits/stl_uninitialized.h \
+ C:/MinGW/include/c++/13.2.0/bits/stl_raw_storage_iter.h \
+ C:/MinGW/include/c++/13.2.0/bits/align.h \
+ C:/MinGW/include/c++/13.2.0/bits/unique_ptr.h \
+ C:/MinGW/include/c++/13.2.0/bits/shared_ptr.h \
+ C:/MinGW/include/c++/13.2.0/bits/shared_ptr_base.h \
+ C:/MinGW/include/c++/13.2.0/bits/allocated_ptr.h \
+ C:/MinGW/include/c++/13.2.0/ext/aligned_buffer.h \
+ C:/MinGW/include/c++/13.2.0/ext/concurrence.h \
+ C:/MinGW/include/c++/13.2.0/bits/shared_ptr_atomic.h \
+ C:/MinGW/include/c++/13.2.0/bits/atomic_base.h \
+ C:/MinGW/include/c++/13.2.0/bits/atomic_lockfree_defines.h \
+ C:/MinGW/include/c++/13.2.0/backward/auto_ptr.h \
+ C:/MinGW/include/c++/13.2.0/pstl/glue_memory_defs.h \
+ C:/MinGW/include/c++/13.2.0/pstl/execution_defs.h \
+ C:/MinGW/include/c++/13.2.0/chrono \
+ C:/MinGW/include/c++/13.2.0/bits/chrono.h \
+ C:/MinGW/include/c++/13.2.0/ratio C:/MinGW/include/c++/13.2.0/cstdint \
+ C:/MinGW/include/c++/13.2.0/limits C:/MinGW/include/c++/13.2.0/ctime \
+ C:/MinGW/include/c++/13.2.0/bits/parse_numbers.h \
+ C:/MinGW/include/c++/13.2.0/thread \
+ C:/MinGW/include/c++/13.2.0/bits/std_thread.h \
+ C:/MinGW/include/c++/13.2.0/bits/this_thread_sleep.h

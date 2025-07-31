@@ -10,19 +10,16 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 # Always include SDL2 headers (they're needed in both cases)
 include_directories(${CMAKE_SOURCE_DIR}/external/SDL2/include)
 
+# ✅ Add this for stb_image.h
+include_directories(${CMAKE_SOURCE_DIR}/external)
+
 if(EMSCRIPTEN)
     message(STATUS "Configuring for Emscripten")
 
-    # For Emscripten, SDL2 is built-in — no linking against external libs
     set(SDL2_LIBS "")
-
-    # You can add Emscripten-specific linker flags here if needed,
-    # for example to preload assets in your game/CMakeLists.txt
-
 else()
     message(STATUS "Configuring for native desktop")
 
-    # Link SDL2 libraries based on compiler
     if(MSVC)
         link_directories(${CMAKE_SOURCE_DIR}/external/SDL2/lib/msvc)
         set(SDL2_LIBS SDL2 SDL2main)

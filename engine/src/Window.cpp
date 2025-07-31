@@ -7,7 +7,7 @@ bool Window::Init() {
 	bool result = true;
 	int windowHeight = 600;
 	int windowWidth = 800;
-	window = SDL_CreateWindow("SDL Window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, windowWidth, windowWidth, SDL_WINDOW_SHOWN);
+	window = SDL_CreateWindow("SDL Window", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, windowWidth, windowHeight, SDL_WINDOW_SHOWN);
 	if (!window) {
 		std::cerr << "Failed to create a window: " << SDL_GetError() << std::endl;
 	}
@@ -32,7 +32,7 @@ void Window::CleanUp() {
 	}
 }
 
-SDL_Window* WindowL::GetWindow() {
+SDL_Window* Window::GetWindow() {
 	return window;
 }
 

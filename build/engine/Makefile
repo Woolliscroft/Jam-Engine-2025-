@@ -153,6 +153,30 @@ src/Engine.cpp.s:
 	cd /d C:\Users\arunw\ONEDRI~1\DOCUME~1\GMTKJA~1\build && $(MAKE) $(MAKESILENT) -f engine\CMakeFiles\engine.dir\build.make engine/CMakeFiles/engine.dir/src/Engine.cpp.s
 .PHONY : src/Engine.cpp.s
 
+src/Window.obj: src/Window.cpp.obj
+.PHONY : src/Window.obj
+
+# target to build an object file
+src/Window.cpp.obj:
+	cd /d C:\Users\arunw\ONEDRI~1\DOCUME~1\GMTKJA~1\build && $(MAKE) $(MAKESILENT) -f engine\CMakeFiles\engine.dir\build.make engine/CMakeFiles/engine.dir/src/Window.cpp.obj
+.PHONY : src/Window.cpp.obj
+
+src/Window.i: src/Window.cpp.i
+.PHONY : src/Window.i
+
+# target to preprocess a source file
+src/Window.cpp.i:
+	cd /d C:\Users\arunw\ONEDRI~1\DOCUME~1\GMTKJA~1\build && $(MAKE) $(MAKESILENT) -f engine\CMakeFiles\engine.dir\build.make engine/CMakeFiles/engine.dir/src/Window.cpp.i
+.PHONY : src/Window.cpp.i
+
+src/Window.s: src/Window.cpp.s
+.PHONY : src/Window.s
+
+# target to generate assembly for a file
+src/Window.cpp.s:
+	cd /d C:\Users\arunw\ONEDRI~1\DOCUME~1\GMTKJA~1\build && $(MAKE) $(MAKESILENT) -f engine\CMakeFiles\engine.dir\build.make engine/CMakeFiles/engine.dir/src/Window.cpp.s
+.PHONY : src/Window.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -165,6 +189,9 @@ help:
 	@echo ... src/Engine.obj
 	@echo ... src/Engine.i
 	@echo ... src/Engine.s
+	@echo ... src/Window.obj
+	@echo ... src/Window.i
+	@echo ... src/Window.s
 .PHONY : help
 
 

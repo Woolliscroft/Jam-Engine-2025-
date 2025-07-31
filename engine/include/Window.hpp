@@ -12,4 +12,4 @@ public:
 private:
 	static SDL_Window* window;
 	static SDL_Renderer* renderer;
-}
+};

@@ -83,17 +83,34 @@ engine/CMakeFiles/engine.dir/src/Engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/src/Engine.cpp.s"
 	cd /d C:\Users\arunw\ONEDRI~1\DOCUME~1\GMTKJA~1\build\engine && C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\arunw\OneDrive - St Albans School\Documents\GMTK Jam 2025\engine\src\Engine.cpp" -o CMakeFiles\engine.dir\src\Engine.cpp.s
 
+engine/CMakeFiles/engine.dir/src/Window.cpp.obj: engine/CMakeFiles/engine.dir/flags.make
+engine/CMakeFiles/engine.dir/src/Window.cpp.obj: engine/CMakeFiles/engine.dir/includes_CXX.rsp
+engine/CMakeFiles/engine.dir/src/Window.cpp.obj: C:/Users/arunw/OneDrive\ -\ St\ Albans\ School/Documents/GMTK\ Jam\ 2025/engine/src/Window.cpp
+engine/CMakeFiles/engine.dir/src/Window.cpp.obj: engine/CMakeFiles/engine.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="C:\Users\arunw\OneDrive - St Albans School\Documents\GMTK Jam 2025\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object engine/CMakeFiles/engine.dir/src/Window.cpp.obj"
+	cd /d C:\Users\arunw\ONEDRI~1\DOCUME~1\GMTKJA~1\build\engine && C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT engine/CMakeFiles/engine.dir/src/Window.cpp.obj -MF CMakeFiles\engine.dir\src\Window.cpp.obj.d -o CMakeFiles\engine.dir\src\Window.cpp.obj -c "C:\Users\arunw\OneDrive - St Albans School\Documents\GMTK Jam 2025\engine\src\Window.cpp"
+
+engine/CMakeFiles/engine.dir/src/Window.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/engine.dir/src/Window.cpp.i"
+	cd /d C:\Users\arunw\ONEDRI~1\DOCUME~1\GMTKJA~1\build\engine && C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\arunw\OneDrive - St Albans School\Documents\GMTK Jam 2025\engine\src\Window.cpp" > CMakeFiles\engine.dir\src\Window.cpp.i
+
+engine/CMakeFiles/engine.dir/src/Window.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/engine.dir/src/Window.cpp.s"
+	cd /d C:\Users\arunw\ONEDRI~1\DOCUME~1\GMTKJA~1\build\engine && C:\MinGW\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\arunw\OneDrive - St Albans School\Documents\GMTK Jam 2025\engine\src\Window.cpp" -o CMakeFiles\engine.dir\src\Window.cpp.s
+
 # Object files for target engine
 engine_OBJECTS = \
-"CMakeFiles/engine.dir/src/Engine.cpp.obj"
+"CMakeFiles/engine.dir/src/Engine.cpp.obj" \
+"CMakeFiles/engine.dir/src/Window.cpp.obj"
 
 # External object files for target engine
 engine_EXTERNAL_OBJECTS =
 
 engine/libengine.a: engine/CMakeFiles/engine.dir/src/Engine.cpp.obj
+engine/libengine.a: engine/CMakeFiles/engine.dir/src/Window.cpp.obj
 engine/libengine.a: engine/CMakeFiles/engine.dir/build.make
 engine/libengine.a: engine/CMakeFiles/engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\arunw\OneDrive - St Albans School\Documents\GMTK Jam 2025\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libengine.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="C:\Users\arunw\OneDrive - St Albans School\Documents\GMTK Jam 2025\build\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libengine.a"
 	cd /d C:\Users\arunw\ONEDRI~1\DOCUME~1\GMTKJA~1\build\engine && $(CMAKE_COMMAND) -P CMakeFiles\engine.dir\cmake_clean_target.cmake
 	cd /d C:\Users\arunw\ONEDRI~1\DOCUME~1\GMTKJA~1\build\engine && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\engine.dir\link.txt --verbose=$(VERBOSE)
 
