@@ -2,7 +2,8 @@
 #include <SDL.h>
 #include <memory>
 
-namespace Engine {
+namespace Engine { 
+    // cant initialise game - made abstract (i think?)
     class Game {
     public:
         virtual void Init() = 0;
@@ -21,7 +22,7 @@ namespace Engine {
         void Start();
     private:
         void Stop();
-
+// wish i knew how these acc worked
         std::unique_ptr<Game> game;
         bool quit = false;
     };

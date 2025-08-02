@@ -13,10 +13,10 @@ void TitleScreen::Update() {}
 
 void TitleScreen::Render() {
     SDL_SetRenderDrawColor(Window::GetRenderer(), 0, 0, 255, 255); //set background colour
-    SDL_RenderClear(Window::GetRenderer());
+    SDL_RenderClear(Window::GetRenderer()); //render stuff
 }
 
-void TitleScreen::HandleInput(const Uint8* keys) {
+void TitleScreen::HandleInput(const Uint8* keys) { // make it use a mouse and not button - add mouse input
     if (keys[SDL_SCANCODE_E]) {
         game->SetScreen("GameScreen");
     }

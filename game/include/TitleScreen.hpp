@@ -1,9 +1,9 @@
 #pragma once
-
 #include "TextureLoader.hpp"
 #include "Screen.hpp"
-class MyGame;      // forward declaration
-class GameScreen;  // forward
+
+class MyGame; // more forward declarations bc of weird error message? could be silly idk - check back
+class GameScreen;  
 
 
 class TitleScreen : public Screen {

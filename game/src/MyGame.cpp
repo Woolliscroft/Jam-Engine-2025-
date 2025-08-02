@@ -8,9 +8,11 @@ void MyGame::SetScreen(const std::string& name) {
 }
 
 void MyGame::Init() {
+    // asset loading done here so it only is loaded once but can be used in multiple game screens, i think thats how it SHOULD work
     ResourceManager::LoadTexture("player", "../assets/player.png");
+    ResourceManager::LoadTexture("enemy", "../assets/enemy.png");
     
-    // Make Screens, and then set to TitleScreen
+    // Make Screens, and then set to TitleScreen (add button switching for screens)
     screenManager.RegisterScreen("TitleScreen", new TitleScreen(this));
     screenManager.RegisterScreen("GameScreen", new GameScreen(this));
     SetScreen("TitleScreen");

@@ -2,6 +2,9 @@
 #include "TextureLoader.hpp"
 #include <iostream>
 
+
+// used LibGDX implementation (just changed to C++ etc. and using SDL not OpenGL)
+
 std::unordered_map<std::string, SDL_Texture*> ResourceManager::textures;
 
 SDL_Texture* ResourceManager::LoadTexture(const std::string& id, const std::string& filepath) {

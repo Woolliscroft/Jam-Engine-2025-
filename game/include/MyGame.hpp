@@ -5,6 +5,7 @@
 #include "ScreenManager.hpp"
 #include "TextureLoader.hpp"
 
+// use MyGame to inherit Enginenamespace and Game from that class - kinda clunky but reccommended by The Cherno
 class MyGame : public Engine::Game {
 public:
     void Init() override;

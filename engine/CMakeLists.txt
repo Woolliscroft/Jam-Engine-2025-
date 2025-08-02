@@ -3,6 +3,10 @@ add_library(engine
     src/Window.cpp
     src/TextureLoader.cpp
     src/ResourceManager.cpp
+    src/Entity.cpp
+    src/SceneObject.cpp
+    src/CharacterObject.cpp
+    src/EnemyObject.cpp
     # Add Engine Source Files here
 )
 

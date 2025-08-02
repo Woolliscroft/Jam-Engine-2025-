@@ -5,7 +5,7 @@
 #include "TextureLoader.hpp"
 #include "Window.hpp"
 
-
+// Texture Loading with stb_image.h because couldn't get SDL_image to work
 SDL_Texture* TextureLoader::LoadTexture(const std::string& path) {
     int width, height, channels;
     unsigned char* pixels = stbi_load(path.c_str(), &width, &height, &channels, STBI_rgb_alpha);

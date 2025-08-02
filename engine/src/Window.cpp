@@ -3,6 +3,8 @@
 SDL_Window* Window::window = nullptr;
 SDL_Renderer* Window::renderer = nullptr;
 
+// controlled by Engine, Engine will ALWAYS open the Window using these functions
+
 bool Window::Init() {
     
     window = SDL_CreateWindow(

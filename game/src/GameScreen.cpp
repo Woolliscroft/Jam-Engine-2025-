@@ -1,32 +1,40 @@
-#include <SDL.h>
-
 #include "GameScreen.hpp"
-#include "TitleScreen.hpp"
-#include "MyGame.hpp"
+#include "CharacterObject.hpp"
+#include "EnemyObject.hpp"
 #include "Window.hpp"
 #include "ResourceManager.hpp"
+#include "MyGame.hpp" 
 
-
-GameScreen::GameScreen(MyGame* g) : game(g) {}
+GameScreen::GameScreen(MyGame* g) : game(g), player(nullptr) {}
 
 void GameScreen::Init() {
-    playerTex = ResourceManager::GetTexture("player");
-    dstRect.x = 100;
-    dstRect.y = 100;
-    dstRect.w = 64;
-    dstRect.h = 64;
+    // ResourceManager for Files
+    SDL_Texture* playerTex = ResourceManager::GetTexture("player");
+    SDL_Texture* enemyTex = ResourceManager::GetTexture("enemy");
+    
+    // Initialise Character Objects
+    player = new CharacterObject(playerTex, 100, 100, 32, 32);
+    enemy = new EnemyObject(enemyTex, 400, 100, 32, 32);
+    enemy->SetTarget(player);
 }
 
-void GameScreen::Update() {}
+void GameScreen::Update() {
+    if (player) {
+        player->Update();
+    }
+    if {
+        (enemy) enemy->Update();
+    }
+}
 
 void GameScreen::Render() {
-    SDL_SetRenderDrawColor(Window::GetRenderer(), 0, 255, 0, 255); // background color
+    SDL_SetRenderDrawColor(Window::GetRenderer(), 0, 255, 0, 255);
     SDL_RenderClear(Window::GetRenderer());
 
-    // Draw the texture
-    SDL_RenderCopy(Window::GetRenderer(), playerTex, nullptr, &dstRect);
+    if (player) player->Render();
+    if (enemy) enemy->Render();
 
-    SDL_RenderPresent(Window::GetRenderer()); // Present everything to the screen
+    SDL_RenderPresent(Window::GetRenderer());
 }
 
 void GameScreen::HandleInput(const Uint8* keys) {
@@ -34,9 +42,5 @@ void GameScreen::HandleInput(const Uint8* keys) {
         game->SetScreen("TitleScreen");
     }
 
-    if (keys[SDL_SCANCODE_W]) dstRect.y -= 4;
-    if (keys[SDL_SCANCODE_S]) dstRect.y += 4;
-    if (keys[SDL_SCANCODE_A]) dstRect.x -= 4;
-    if (keys[SDL_SCANCODE_D]) dstRect.x += 4;
+    if (player) player->HandleInput(keys);
 }
-

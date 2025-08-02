@@ -3,6 +3,8 @@
 #include <unordered_map>
 #include <SDL.h>
 
+
+// kinda alright?
 class ResourceManager {
 public:
     static SDL_Texture* LoadTexture(const std::string& id, const std::string& filepath);

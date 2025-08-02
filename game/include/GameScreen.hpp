@@ -1,8 +1,11 @@
 #pragma once
 
-#include "TextureLoader.hpp"
 #include "Screen.hpp"
-class MyGame;
+#include "CharacterObject.hpp" 
+#include "EnemyObject.hpp"
+
+
+class MyGame; // forward declaring otherwise its kinda beefy and had some error; apparently this fixes it -check back later
 
 class GameScreen : public Screen {
 public:
@@ -11,8 +14,11 @@ public:
     void Update() override;
     void Render() override;
     void HandleInput(const Uint8* keys) override;
+
 private:
     MyGame* game;
-    SDL_Texture* playerTex = nullptr;
-    SDL_Rect dstRect;
+
+    CharacterObject* player = nullptr;
+
+    EnemyObject* enemy = nullptr;
 };
