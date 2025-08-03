@@ -1,15 +1,16 @@
 #pragma once
 
-#include "Screen.hpp"
-#include "CharacterObject.hpp" 
+#include "Screen.hpp"  // <-- This is crucial
+#include "CharacterObject.hpp"
 #include "EnemyObject.hpp"
+#include "SceneObject.hpp"
 
-
-class MyGame; // forward declaring otherwise its kinda beefy and had some error; apparently this fixes it -check back later
+class MyGame;  // Forward declaration
 
 class GameScreen : public Screen {
 public:
-    GameScreen(MyGame* game);  
+    GameScreen(MyGame* g);
+
     void Init() override;
     void Update() override;
     void Render() override;
@@ -17,8 +18,7 @@ public:
 
 private:
     MyGame* game;
-
     CharacterObject* player = nullptr;
-
     EnemyObject* enemy = nullptr;
+    SceneObject* tile = nullptr;
 };

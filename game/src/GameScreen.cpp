@@ -4,6 +4,7 @@
 #include "Window.hpp"
 #include "ResourceManager.hpp"
 #include "MyGame.hpp" 
+#include "SceneObject.hpp"
 
 GameScreen::GameScreen(MyGame* g) : game(g), player(nullptr) {}
 
@@ -11,10 +12,13 @@ void GameScreen::Init() {
     // ResourceManager for Files
     SDL_Texture* playerTex = ResourceManager::GetTexture("player");
     SDL_Texture* enemyTex = ResourceManager::GetTexture("enemy");
+    SDL_Texture* tileTex = ResourceManager::GetTexture("tile");
     
     // Initialise Character Objects
     player = new CharacterObject(playerTex, 100, 100, 32, 32);
     enemy = new EnemyObject(enemyTex, 400, 100, 32, 32);
+    tile = new SceneObject(tileTex, 200, 200, 32, 32);
+
     enemy->SetTarget(player);
 }
 
@@ -22,17 +26,34 @@ void GameScreen::Update() {
     if (player) {
         player->Update();
     }
-    if {
-        (enemy) enemy->Update();
+    if (enemy) {
+        enemy->Update();
+    }
+
+    if (player && tile) {
+        player->SetCollision(true, tile);
+
+        SDL_Rect playerRect = player->GetBounds();
+        SDL_Rect tileRect = tile->GetBounds();
+
+        if (SDL_HasIntersection(&playerRect, &tileRect)) {
+            // Move player back to previous position
+            player->SetDestRect(player->previousPos);
+        } else {
+            // Update previousPos to current destRect
+            player->previousPos = player->GetDestRect();
+        }
     }
 }
 
+
 void GameScreen::Render() {
-    SDL_SetRenderDrawColor(Window::GetRenderer(), 0, 255, 0, 255);
+    SDL_SetRenderDrawColor(Window::GetRenderer(), 0, 0, 255, 255);
     SDL_RenderClear(Window::GetRenderer());
 
     if (player) player->Render();
     if (enemy) enemy->Render();
+    if (tile) tile->Render();
 
     SDL_RenderPresent(Window::GetRenderer());
 }

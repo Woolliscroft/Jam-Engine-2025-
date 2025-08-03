@@ -32,10 +32,12 @@ public:
         }
     }
 
-    void HandleInput(const Uint8* keys) { //checking input on the screen
-        if (currentScreen) {
-            currentScreen->HandleInput(keys);
-        }
+    void HandleInput(const Uint8* keys) {
+    if (currentScreen) currentScreen->HandleInput(keys);
+    }
+
+    void HandleEvent(const SDL_Event& event) {
+        if (currentScreen) currentScreen->HandleEvent(event);
     }
 
 private:

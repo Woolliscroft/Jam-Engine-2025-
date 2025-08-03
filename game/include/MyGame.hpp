@@ -12,6 +12,7 @@ public:
     void Update() override;
     void Render() override;
     void HandleInput(const Uint8* keys) override;
+    void HandleEvent(const SDL_Event& event);
 
     void SetScreen(const std::string& name);
 

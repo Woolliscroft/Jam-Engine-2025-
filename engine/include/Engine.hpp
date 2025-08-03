@@ -10,6 +10,10 @@ namespace Engine {
         virtual void Update() = 0;
         virtual void Render() = 0;
         virtual void HandleInput(const Uint8* keys) = 0;
+
+        // Add this line to enable event handling
+        virtual void HandleEvent(const SDL_Event& event) {}
+
         virtual ~Game() = default;
     };
 
@@ -22,7 +26,6 @@ namespace Engine {
         void Start();
     private:
         void Stop();
-// wish i knew how these acc worked
         std::unique_ptr<Game> game;
         bool quit = false;
     };

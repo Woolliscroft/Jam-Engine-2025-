@@ -32,6 +32,7 @@ void Engine::Start() {
             if (event.type == SDL_QUIT) {
                 quit = true;
             }
+            game->HandleEvent(event);
         }
 
         const Uint8* keys = SDL_GetKeyboardState(nullptr); 
